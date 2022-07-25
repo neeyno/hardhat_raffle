@@ -16,20 +16,21 @@ async function updateContractAddresses() {
     } else {
         currentAddresses[chainId] = [raffle.address]
     }
+    //currentAddresses[chainId] = [raffle.address]
     fs.writeFileSync(FRONTEND_ADDRESSES_FILE, JSON.stringify(currentAddresses))
 }
 
 async function updateAbi() {
     const raffle = await ethers.getContract("Raffle")
     fs.writeFileSync(FRONTEND_ABI_FILE, raffle.interface.format(ethers.utils.FormatTypes.json))
-    const chainId = network.config.chainId.toString()
+    //const chainId = network.config.chainId.toString()
 }
 
 module.exports = async function () {
     if (process.env.UPDATE_FRONTEND) {
         console.log("Updating frontend")
-        updateContractAddresses()
-        updateAbi()
+        await updateContractAddresses()
+        await updateAbi()
         console.log("------------------------------------------")
     }
 }
