@@ -2,6 +2,7 @@
 
 The application enables Metamask wallet connection and allows users to enter the raffle for a small fee.  A timer controls the raffle, which automatically picks a random winner (by using Chainlink VRF and Chainlink Keeper). The winner will get all the money from raffle.
 
+[Etherscan - Contract instance](https://rinkeby.etherscan.io/address/0x339D26D01FFDA302EBb32D98415e4c59445D1553)
 
 
 ### Usage - Rinkeby testnet only
@@ -12,6 +13,7 @@ To participate in the DEMO raffle you need to do the following steps:
 - Pay entrance fee and confirm a tx 
 - Then wait for about 5 minutes (Chainlink keepers interval)
 - Congratulations! You are the winner(because no one else play it)
+
 
 
 ## Frontend
